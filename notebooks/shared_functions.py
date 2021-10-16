@@ -58,7 +58,7 @@ warnings.filterwarnings('ignore')
 # ## Loading and saving data
 
 # ### read_from_files
-# 
+#
 # First use in [Chapter 3, Baseline Feature Transformation](Baseline_Feature_Transformation).
 
 # In[ ]:
@@ -66,9 +66,9 @@ warnings.filterwarnings('ignore')
 
 # Load a set of pickle files, put them together in a single DataFrame, and order them by time
 # It takes as input the folder DIR_INPUT where the files are stored, and the BEGIN_DATE and END_DATE
-def read_from_files(DIR_INPUT, FILE_PREFIX, BEGIN_DATE, END_DATE):
+def read_from_files(DIR_INPUT, BEGIN_DATE, END_DATE):
     files = [os.path.join(DIR_INPUT, f) for f in os.listdir(DIR_INPUT) if
-             (FILE_PREFIX + BEGIN_DATE + '.pkl') <= f <= (FILE_PREFIX + END_DATE + '.pkl')]
+             (BEGIN_DATE + '.pkl') <= f <= (END_DATE + '.pkl')]
 
     frames = []
     for f in files:
